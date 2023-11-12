@@ -1,0 +1,32 @@
+<header>
+    <nav>
+        <div class="w-4/5 mx-auto md:flex md:justify-between p-5 items-center">
+            <div class="mb-3 justify-center text-center">
+                <span class="" >
+                    <img src="" alt="">
+                    <a href="/home" class="font-bold text-2xl uppercase">Luxshoery</a>
+                </span>
+            </div>
+            <ul class="block space-y-3 md:flex md:space-x-3  md:space-y-0">
+            <% if (!session.logged) { %>
+                <li class="p-3 text-center bg-frist rounded-md">
+                    <a href="/login" class="hover:font-bold">Login</a>
+                </li>
+                <li class="p-3 text-center bg-last rounded-md">
+                    <a href="/register" class="hover:font-bold">Register</a>
+                </li>
+            <% } else { %>
+
+                <% if (session.admin == true) { %>
+                    <li class="p-3 text-center bg-frist rounded-md ">
+                        <a href="/admin/home" class="hover:font-bold">Admin</a>
+                    </li>
+                <% } %>
+                <li class="p-3 text-center bg-frist rounded-md ">
+                    <a href="/shop" class="hover:font-bold">Sneakers</a>
+                </li>
+            <% } %>
+            </ul>
+        </div>
+    </nav>
+</header>

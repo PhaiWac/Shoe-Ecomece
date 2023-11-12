@@ -1,0 +1,27 @@
+<div class="container mx-auto flex flex-col space-y-3 w-full">
+    <div class="w-5/6 p-5 rounded-md shadow-lg flex flex-col bg-[#EEEEEE] mx-auto md:w-2/4">
+        <div class="mx-auto">
+            <h2 class="font-bold text-xl">Register</h2>
+        </div>
+        <div class="mx-auto container">
+            <form action="/register" method="post">
+                <div class="p-3 flex flex-col space-y-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="p-1 rounded-md" id = 'email' name ='email'>
+                </div>
+                <div class="p-3 flex flex-col space-y-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="p-1 rounded-md" id = 'password' name ='password'>
+                </div>
+                <div class="p-3 flex flex-col space-y-3">
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" class="p-1 rounded-md" id = 'confirm' name ='confirm'>
+                </div>
+                <div class="p-3 flex flex-col space-y-3">
+                    <button type="submit" class="bg-last w-fit mx-auto px-5 py-2 bg-[#393E46] text-white rounded-md">Register</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
