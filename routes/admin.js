@@ -22,7 +22,39 @@ router.get('/configitems', async (req , res , next) => {
     res.render('itemconfig',{session : req.session , data : result})
 })
 
-router.delete('/:id', async (req, res, next) => {
+router.post('/addcost/:id' , async ( req, res , next ) => {
+    const newcost = req.body.cost ;
+
+    const add = await Users.updateOne({ _id : req.params.id }, { 
+        $set: {
+            'info.cost': Number(newcost)
+        } 
+    })
+
+    if (add.modifiedCount > 0) {
+        res.redirect('/admin/configuser')
+    }
+
+})
+
+router.delete('/removeitem/:id' , async ( req , res , next) => {
+    const ItemId = req.params.id ;
+
+    try {
+        const deleteitem = await Product.findByIdAndDelete(ItemId) ;
+
+        if (!deleteitem) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.redirect('/admin/configitems')
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        res.status(500).send('Internal Server Error');
+    }
+})
+
+router.delete('/removeuser/:id', async (req, res, next) => {
     const userId = req.params.id;
 
     try {

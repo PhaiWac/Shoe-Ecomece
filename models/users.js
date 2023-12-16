@@ -5,12 +5,12 @@ const userSchema = new mongoose.Schema({
         email : String ,
         password : String,
         admin : Boolean,
-        cash : Number ,
+        cost : Number ,
         address : String 
     },
-    book : Object 
 
 })
+
 
 const User = mongoose.model('users', userSchema);
 

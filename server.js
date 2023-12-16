@@ -44,7 +44,10 @@ app.listen(process.env.PORT || 3000 , () => {
 
 const indexRoutes = require('./routes/index') ;
 const adminRoutes = require('./routes/admin') ;
+const userRoters = require('./routes/user'); 
 
 app.use('/',indexRoutes)
 
 app.use('/admin',adminRoutes)
+
+app.use('/user',userRoters)

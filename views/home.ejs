@@ -1,5 +1,35 @@
 <section>
-    <div class="w-4/5 rounded-md mx-auto h-4/6 translate-y-1/2 p-5 md:p-[5rem] " id='main'>
+    <div class="w-4/5 rounded-md mx-auto  " >
+        <!-- <div class="h-fit rounded-md flex flex-wrap justify-between md:overflow-hidden md:flex-nowrap md:h-[25rem] md:bg-[#F3EEEA]">
+           
+            <div class="w-full m-[2rem] ">
+                <div class="container  mx-auto p-5 font-semibold">
+                    <p class="uppercase text-center md:text-start">need shoe ?</p>
+                    <h1 class="mt-3 text-3xl text-center  md:text-5xl md:text-start">Luxshoery Shop</h1>
+                    <p class="mt-3 mb-3 text-[#B0A695] text-center md:text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ducimus dolore culpa aliquid? Itaque optio, dolores ullam eaque libero dignissimos.</p>
+                    <div class="w-full mx-auto flex justify-center md:block">
+                        <a href="" class="px-8 py-2 bg-[#EBE3D5] rounded-lg shadow-md ">SHOP</a>
+                    </div>
+                </div>
+            </div>
+            <div class=" w-full">
+                <img src="/img/mainnike.png" class=" max-h-[30rem] -rotate-12 scale-[1.1] object-contain" alt="">
+            </div>
+
+        </div>
+        <div class="block mt-5">
+            <h2 class="text-3xl font-bold text-center text-[#776B5D]">Left | Right</h2>
+
+            <div class="flex flex-wrap justify-between md:flex-nowrap">
+                <div class="w-full m-5 bg-[#F3EEEA]  ">
+                    <img src="/img/NikeLow.png" class="mx-auto  object-cover  object-top" alt="">
+                </div>
+                <div class="w-1/2 m-5 bg-[#F3EEEA] ">
+                    <img src="/img/NikeHigh.png" class=" object-contain scale-75 me-auto" alt="">
+                </div>
+            </div>
+        </div> -->
+
         <div class="text-center font-semibold text-3xl  md:text-5xl  ">
             <h1>YOUR WELCOME TO</h1>
             <h1 class="uppercase">Luxshoery</h1>
@@ -12,20 +42,61 @@
         <div class="grid grid-cols-1 gap-3 mt-[5rem] md:grid-cols-3  text-white" >
             <div class="bg-gray-900 shadow-sm p-5 rounded-md ">
                 <h2 class="font-bold text-3xl mb-2">ทำไมต้องที่นี้?</h2>
-                <p>Luxshoery มีรับประกันฟรี 2 วัน ของแทร่ผ่านโรงเกลือ มีปัญหาไม่รับคืน</p>
+                <p>Luxshoery มีรับประกันฟรี 2 ปี หากสินค้ามีปํญหาสามารถมาแจ้งได้ทันที</p>
             </div>
             <div class="bg-gray-900 shadow-sm p-5 rounded-md ">
                 <h2 class="font-bold text-3xl mb-2">ของแท้มั้ย ?</h2>
-                <p>ถึงของจะไม่แท้ แต่คนขายของแทร่แน่นอน </p>
+                <p>สินค้าของแท้ แน่นอน</p>
             </div>
             <div class="bg-gray-900 shadow-sm p-5 rounded-md ">
                 <h2 class="font-bold text-3xl mb-2">บริการ</h2>
-                <p>Luxshoery มีบริการใส่และขโมยถึงบ้าน</p>
+                <p>Luxshoery มีบริการส่งฟรีถึงบ้าน </p>
             </div>
         </div>
 
-        <div class="w-full flex mx-auto mt-5">
-            <a href="" class="mx-auto border-2 px-3 py-2 border-gray-900 rounded-md shadow-md">เลือกซื้อสินค้า !</a>
+        <div class="w-full mt-7">
+            <h2 class="text-5xl font-bold text-center uppercase">
+                Items
+            </h2>
+        </div>
+
+        <div class="mt-[3rem] mb-[5rem] grid mt-5 grid-cols-1 gap-2 max-h-5 md:grid-cols-5 md:gap-4 ">
+            <% data.forEach((v)=> { %>
+                <div class="p-5 w-fit bg-gray-50 rounded-md shadow-md  ">
+                    <div class="mb-5 ">
+                        <img src="/img/<%=v.image%>" class="object-contain " width="300" height="300">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-2xl font-bold uppercase">
+                            <%= v.name %>
+                        </h1>
+                    </div>
+                    <div class="flex mt-3 space-x-1 font-bold items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p class="text-xl">
+                            <%= v.price %>
+                        </p>
+                    </div>
+                    <div class="flex ">
+                        <form action="" class="mt-5 bg-black text-white w-fit px-3 py-2 rounded-md">
+                            <button tpye="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                                </svg>
+                            </button>
+                        </form>
+                        <p class="ms-auto my-auto ">
+                            <%= (v.count <=0 ? "สินค้าหมดแล้ว" : "Stock " + v.count  ) %>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
         </div>
     </div>
 </section>

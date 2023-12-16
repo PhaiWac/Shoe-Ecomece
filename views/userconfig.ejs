@@ -14,9 +14,14 @@
                     <tr class="text-center bg-gray-50 border-b-2">
                         <td class="px-6 py-3"><%= v.info.email %></td>
                         <td class="px-6 py-3"><%= v.info.password %></td>
-                        <td class="px-6 py-3"><%= (v.info.price ) ?? 0 %></td>
+                        <td class="px-6 py-3">
+                            <form action="/admin/addcost/<%= v._id %>" method="POST">
+                                <input type="number"name = "cost" placeholder="<%= (v.info.cost ) ?? 0 %>" class="text-center rounded-md">
+                                <button type="submit" class="hidden"></button>
+                            </form>
+                        </td>
                         <td class="px-6 py-4">
-                            <form action="/admin/<%= v._id %>?_method=DELETE" method="POST">
+                            <form action="/admin/removeuser/<%= v._id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
                             </form>
                         </td>
